@@ -1,0 +1,125 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: hsl(0, 0%, 100%);
+    color: rgb(0, 0, 0);
+    width: 100%;
+    height: auto;
+    overflow-x: hidden;
+   
+}
+
+.movie-section {
+    width: 100%;
+    overflow: visible;
+    position: relative;
+    padding: 20px 0;
+    background: #ffffff;
+  }
+  
+  /* Tiêu đề danh mục */
+  .movie-category {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  /* Phần chứa danh sách phim */
+  .movie-list {
+    gap: 25px;
+    display: flex;
+    overflow: visible;
+    scroll-behavior: smooth;
+    padding: 10px;
+    scrollbar-width: none; /* Ẩn scrollbar */
+    z-index: 5;
+  }
+  
+  
+  /* Card phim */
+  .movie {
+    width: auto;
+    min-width: 300px; /* Tăng chiều rộng */
+    height: 200px;  /* Tăng chiều cao nếu cần */
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+
+  }
+  
+  /* Background của mỗi phim */
+  
+    .movie-bg {
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      transition: transform 0.3s ease-in-out;
+    }
+  
+  
+  /* Hiệu ứng hover */
+  .movie:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Thông tin phim */
+  .movie-info {
+    position: absolute;
+    bottom: -60px;
+    width: 100%;
+    height: auto;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+    opacity: 1;
+    transform: translateY(-25px);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+  h2{
+    font-size: 20px;
+  }
+  p{
+    font-size: 15px;
+  }
+  
+  .movie:hover .movie-info {
+    opacity: 1;
+    transform: translateY(0);
+  }
+/* 🔹 Nút điều hướng (Trái & Phải) */
+.arrow {
+    position: absolute;  /* Định vị theo .movie-section */
+    top: 50%;  /* Căn giữa theo chiều dọc */
+    transform: translateY(-50%); /* Giữ nút chính giữa */
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    z-index: 10;
+}
+
+/* 🔹 Nút bấm nằm sát mép movie-section */
+.left-arrow {
+    left: 0; /* Sát mép trái của .movie-section */
+}
+
+.right-arrow {
+    right: 0; /* Sát mép phải của .movie-section */
+}
+
+.arrow:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Đảm bảo .movie-section có vị trí tương đối */
+
